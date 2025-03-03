@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi amor ❤️</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe4e1;
+            margin: 0;
+            padding: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        h1 {
+            color: #ff4081;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .yes {
+            background-color: #ff4081;
+            color: white;
+        }
+        .no {
+            background-color: #ccc;
+            color: black;
+            position: absolute;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>¿Me amas? ❤️</h1>
+        <p>Por favor, responde con sinceridad 😘</p>
+        <div class="buttons">
+            <button class="yes" onclick="showLoveMessage()">Sí 😍</button>
+            <button class="no" onmouseover="moveButton()">No 🙄</button>
+        </div>
+        <div id="loveMessage" class="hidden">
+            <h2>¡Yo también te amo muchísimo! 💖</h2>
+            <img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" alt="Love GIF">
+        </div>
+    </div>
+
+    <script>
+        function showLoveMessage() {
+            document.getElementById("loveMessage").classList.remove("hidden");
+            document.querySelector(".buttons").classList.add("hidden");
+        }
+
+        function moveButton() {
+            let btnNo = document.querySelector(".no");
+            let x = Math.random() * (window.innerWidth - 100);
+            let y = Math.random() * (window.innerHeight - 50);
+            btnNo.style.left = x + "px";
+            btnNo.style.top = y + "px";
+        }
+    </script>
+
+</body>
+</html>
